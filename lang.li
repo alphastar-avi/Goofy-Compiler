@@ -1,5 +1,12 @@
-int a = 10;
-int b = 20;
-if ( b > a ){
-  print("hello");
+int arr[] = {1,2,3,4,5,2,4,34,535,223,435,45,2,234};
+int sum = 0;
+loop i : arr{
+    inline(i);
+    sum = sum + i;
 }
+print();
+print("The sum of the array are:");
+print(sum);
+inline("hello ");
+inline("world");
+print();
