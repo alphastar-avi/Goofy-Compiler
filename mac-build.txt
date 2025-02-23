@@ -10,20 +10,7 @@ g++ ast.o parser.tab.o lex.yy.o codegen.o runtime.o -o compiler $(llvm-config --
 cat lang.li | ./compiler > output.ll
 lli -load ./libruntime.so output.ll
 
-
-
 ------------------------------------------------------------------------------------------
-Old Command
-
-bison -d parser.y                                        
-flex lexer.l                                                                    
-gcc -c ast.c -o ast.o
-gcc -c parser.tab.c -o parser.tab.o
-gcc -c lex.yy.c -o lex.yy.o
-g++ -c codegen.cpp -o codegen.o $(llvm-config --cxxflags)
-g++ ast.o parser.tab.o lex.yy.o codegen.o -o compiler $(llvm-config --ldflags --libs core)
-cat lang.li | ./compiler > output.ll
-lli output.ll
 
 to remove build files:
 rm -f ast.o parser.tab.c parser.tab.h parser.tab.o lex.yy.c lex.yy.o codegen.o compiler output.ll libruntime.so

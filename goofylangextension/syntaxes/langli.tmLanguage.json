@@ -1,0 +1,44 @@
+{
+  "scopeName": "source.langli",
+  "patterns": [
+    {
+      "name": "keyword.control.langli",
+      "match": "\\b(if|else|while|for|return|loop)\\b|loop\\s+until"
+    },
+    {
+      "name": "keyword.operator.comparison.langli",
+      "match": "(lesser\\s+than\\s+equals|greater\\s+than\\s+equals|lesser\\s+than|greater\\s+than)"
+    },
+    {
+      "name": "keyword.operator.logical.langli",
+      "match": "\\b(and|or)\\b|(\\&\\&|\\|\\|)"
+    },
+    {
+      "name": "support.function.langli",
+      "match": "\\b(print|input)\\b"
+    },
+    {
+      "name": "storage.type.langli",
+      "match": "\\b(int|float|bool|char|str)\\b"
+    },
+    {
+      "name": "constant.numeric.langli",
+      "match": "\\b\\d+(\\.\\d+)?\\b"
+    },
+    {
+      "name": "string.quoted.double.langli",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.langli",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "comment.line.double-slash.langli",
+      "match": "//.*$"
+    }
+  ]
+}

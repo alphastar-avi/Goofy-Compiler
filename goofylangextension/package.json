@@ -1,0 +1,61 @@
+{
+  "name": "langli-extension",
+  "displayName": "Lang.li Extension",
+  "description": "VS Code extension for the Lang.li programming language with advanced highlights and toggle command",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "langli.toggleGoofyHighlights",
+        "title": "Toggle Goofy Highlights"
+      }
+    ],
+    "languages": [
+      {
+        "id": "langli",
+        "aliases": [
+          "Lang.li",
+          "langli"
+        ],
+        "extensions": [
+          ".li"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "langli",
+        "scopeName": "source.langli",
+        "path": "./syntaxes/langli.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "echo \"No tests yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alphastar-avi/Goofy-Compiler"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.97.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "langli-extension": "file:"
+  }
+}
